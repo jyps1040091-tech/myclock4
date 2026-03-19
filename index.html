@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="h-full" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FluidStream Esports Time</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet"/>
+<style data-purpose="custom-animations">
+    /* Core glowing animations for the esports theme */
+    @keyframes pulse-neon {
+      0%, 100% { opacity: 1; filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7)); }
+      50% { opacity: 0.8; filter: drop-shadow(0 0 20px rgba(255, 0, 255, 0.9)); }
+    }
+    .animate-neon {
+      animation: pulse-neon 4s infinite ease-in-out;
+    }
+    .text-glow-cyan {
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
+    .text-glow-magenta {
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    }
+    /* Dark background with subtle radial gradients for depth */
+    .bg-fluid-dark {
+      background-color: #020205;
+      background-image: radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(255, 0, 255, 0.05) 0%, transparent 50%);
+    }
+    /* Specific clip-path for futuristic cards */
+    .holograph-clip {
+      clip-path: polygon(0% 0%, 90% 0%, 100% 10%, 100% 100%, 10% 100%, 0% 90%);
+    }
+  </style>
+<style data-purpose="layout-styling">
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      overflow: hidden; /* Keep the interface within the viewport */
+    }
+    .font-orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+    /* Main container frame simulating a screen bezel */
+    .bezel-frame {
+      border: 2px solid rgba(0, 255, 255, 0.2);
+      box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 255, 255, 0.1);
+    }
+    /* Stylized holographic cards */
+    .holograph-card {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(0, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body class="h-full flex items-center justify-center p-4 lg:p-8 bg-fluid-dark">
+<main class="relative w-full max-w-7xl aspect-video bezel-frame rounded-xl overflow-hidden flex flex-col shadow-2xl" data-purpose="main-dashboard">
+<header class="relative z-10 flex justify-between items-center px-8 py-6 border-b border-white/5 bg-black/40 backdrop-blur-sm" data-purpose="top-nav">
+<div class="flex flex-col">
+<h1 class="font-orbitron text-2xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-500 animate-neon">
+          FLUIDSTREAM ESPORTS TIME
+</h1>
+<div class="h-0.5 w-32 bg-gradient-to-r from-cyan-500 to-transparent mt-1"></div>
+</div>
+<nav class="flex space-x-8 text-gray-400 font-medium" data-purpose="nav-icons">
+<button class="hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2 group">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+<span class="text-xs font-orbitron uppercase tracking-widest hidden lg:inline">Home</span>
+</button>
+<button class="hover:text-magenta-400 transition-colors duration-300 flex items-center gap-2 group">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+<span class="text-xs font-orbitron uppercase tracking-widest hidden lg:inline">Gallery</span>
+</button>
+<button class="hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2 group">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+<span class="text-xs font-orbitron uppercase tracking-widest hidden lg:inline">Analytics</span>
+</button>
+<button class="hover:text-magenta-400 transition-colors duration-300 flex items-center gap-2 group">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+<span class="text-xs font-orbitron uppercase tracking-widest hidden lg:inline">Settings</span>
+</button>
+</nav>
+</header>
+<section class="flex-grow flex relative p-8 gap-8" data-purpose="dashboard-body">
+<div class="flex-grow flex flex-col gap-8">
+<div class="flex-grow flex flex-col items-center justify-center relative holograph-card holograph-clip p-12" data-purpose="central-clock-area">
+<div class="absolute inset-0 w-full h-full opacity-30 mix-blend-screen pointer-events-none bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-tbl1kCFEdh9H06YNcPZ6WIhABLu1javoRoo9NJ-DcPJVCm9urwlHScvRPGaEFIuWB1nvSpefVf0sC_Z9eYz6rnBe5fuBXav-tmgfH1_2vUNQL3BJPboFkdJryXo41KBu-R6NTbMi1EN-BGOQS_MN6ZofH7NVPdFCfaTGM824LtD7XOeCp-Hxbv67Zzl53MQmXvgqk7RsFsDdu8sls-ZbGm8ojQhkETj40TSLjx7ll8BucYIG3k--SihOxTANMNLB0nIOyXMyCItO')] bg-cover bg-center"></div>
+<div class="relative text-center">
+<div class="text-9xl lg:text-[12rem] font-orbitron font-black text-white leading-none tracking-tighter mix-blend-screen text-glow-cyan" id="digital-clock">14:26:00</div>
+<div class="mt-4 text-3xl lg:text-4xl font-orbitron font-bold tracking-[0.4em] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-400 uppercase" id="current-date">
+              WEDNESDAY, MAR 18
+            </div>
+</div>
+</div>
+<div class="holograph-card holograph-clip p-6" data-purpose="network-feed">
+<h3 class="font-orbitron text-sm tracking-[0.2em] text-cyan-400 mb-4 uppercase">Network Feed</h3>
+<div class="space-y-3 overflow-hidden font-mono text-sm">
+<div class="text-xs opacity-80 border-l-2 border-cyan-500 pl-2">
+<span class="text-cyan-400 font-bold">[USER_09]</span> joined the arena
+            </div>
+<div class="text-xs opacity-80 border-l-2 border-magenta-500 pl-2">
+<span class="text-magenta-400 font-bold">[EVENT]</span> tournament starts in 02:45
+            </div>
+<div class="text-xs opacity-80 border-l-2 border-cyan-500 pl-2">
+<span class="text-cyan-400 font-bold">[CORE]</span> thermal stable at 42°C
+            </div>
+<div class="text-xs opacity-80 border-l-2 border-gray-500 pl-2">
+<span class="text-gray-400 font-bold">[SYS]</span> syncing global rankings...
+            </div>
+</div>
+</div>
+</div>
+<aside class="w-80 flex flex-col gap-8 z-10" data-purpose="right-panels">
+<div class="holograph-card holograph-clip p-6" data-purpose="player-stats">
+<h3 class="font-orbitron text-sm tracking-[0.2em] text-cyan-400 mb-4 uppercase">Live Player Stats</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-end border-b border-cyan-900/50 pb-2">
+<span class="text-sm text-gray-400 uppercase">K/D Ratio</span>
+<span class="text-2xl font-bold font-orbitron text-white">4.25</span>
+</div>
+<div class="flex justify-between items-end border-b border-cyan-900/50 pb-2">
+<span class="text-sm text-gray-400 uppercase">Headshot %</span>
+<span class="text-2xl font-bold font-orbitron text-white">68%</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-sm text-gray-400 uppercase">Win Streak</span>
+<span class="text-2xl font-bold font-orbitron text-magenta-500 text-glow-magenta">12</span>
+</div>
+</div>
+</div>
+<div class="holograph-card holograph-clip p-6 flex-grow flex flex-col" data-purpose="live-analytics">
+<h3 class="font-orbitron text-sm tracking-[0.2em] text-magenta-400 mb-4 uppercase">Live Analytics</h3>
+<div class="relative w-full flex-grow mt-2 bg-black/40 rounded-lg flex items-end p-4 space-x-2">
+<div class="flex-grow bg-cyan-500 h-[40%]" style="box-shadow: 0 0 10px #00ffff"></div>
+<div class="flex-grow bg-cyan-500 h-[60%]" style="box-shadow: 0 0 10px #00ffff"></div>
+<div class="flex-grow bg-magenta-500 h-[85%]" style="box-shadow: 0 0 10px #ff00ff"></div>
+<div class="flex-grow bg-cyan-500 h-[50%]" style="box-shadow: 0 0 10px #00ffff"></div>
+<div class="flex-grow bg-cyan-500 h-[70%]" style="box-shadow: 0 0 10px #00ffff"></div>
+<div class="flex-grow bg-magenta-500 h-[95%]" style="box-shadow: 0 0 10px #ff00ff"></div>
+<div class="flex-grow bg-cyan-500 h-[30%]" style="box-shadow: 0 0 10px #00ffff"></div>
+</div>
+<p class="text-[11px] mt-4 text-gray-500 uppercase font-orbitron text-center tracking-wider">Real-time engagement feed</p>
+</div>
+<div class="holograph-card p-1.5 holograph-clip" data-purpose="tactical-map">
+<div class="relative aspect-square bg-black overflow-hidden group rounded-md">
+<div class="absolute inset-0 bg-blue-900/20 opacity-50 mix-blend-overlay"></div>
+<img alt="Tactical Map Sector" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCXmCkiMqH42FQLL2ZfTPaDYhXXClp7zp_vzTOpIOvTZiK3Oxy1EXFdkKER2Te5Y6HUlRRVAq_XG13X-797Qbut189NTBAn7EvbKaRtcLSRn-7ep3D6_WWcmerVzvsQHduHvPM97wND_rMjjNGAuVA6dChxYydMnlGCps4tlZ9A-Cl8liJ6DD-235AFuZ-njOuO33J3kGS2Y-jJJ-scqUBm2AzExkItdNVgzZsw7-7a-NVbYrjjz1ga5FhHUaIPeTx4uQNGgd8vwfE"/>
+<div class="absolute top-3 left-3 bg-red-600 h-2.5 w-2.5 rounded-full animate-ping"></div>
+<div class="absolute bottom-3 right-3 text-[10px] font-orbitron text-cyan-400 p-1.5 bg-black/90 font-medium tracking-wider">SECTOR 7-B</div>
+</div>
+</div>
+</aside>
+</section>
+<footer class="relative z-10 px-8 py-4 border-t border-white/5 bg-black/40 backdrop-blur-sm flex justify-between items-center" data-purpose="bottom-bar">
+<div class="flex items-center space-x-6">
+<div class="flex items-center gap-2.5">
+<div class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_#22c55e]"></div>
+<span class="text-xs font-orbitron tracking-widest text-gray-400 uppercase">Server Online</span>
+</div>
+<div class="h-4 w-px bg-white/10"></div>
+<span class="text-xs font-orbitron tracking-widest text-gray-400 uppercase">Ping: 12ms</span>
+</div>
+<div class="text-xs font-orbitron tracking-[0.3em] text-gray-500">
+        © 2024 FLUIDSTREAM ESPORTS INTERFACE
+      </div>
+<div class="flex items-center space-x-2">
+<span class="w-3 h-3 bg-cyan-500/50 rounded-sm"></span>
+<span class="w-3 h-3 bg-magenta-500/50 rounded-sm"></span>
+<span class="w-3 h-3 bg-white/50 rounded-sm"></span>
+</div>
+</footer>
+</main>
+<script data-purpose="clock-logic">
+    function updateClock() {
+      const now = new Date();
+      
+      // Update Time
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      // The original ID is preserved to maintain script functionality
+      document.getElementById('digital-clock').textContent = `${hours}:${minutes}:${seconds}`;
+
+      // Update Date
+      const options = { weekday: 'long', month: 'short', day: 'numeric' };
+      const dateString = now.toLocaleDateString('en-US', options).toUpperCase();
+      // The original ID is preserved to maintain script functionality
+      document.getElementById('current-date').textContent = dateString;
+    }
+
+    // Set initial state
+    updateClock();
+    // Update every second
+    setInterval(updateClock, 1000);
+  </script>
+</body>
+</html>
